@@ -61,32 +61,53 @@ button {
 }
 
 .newBookDialog {
-    width: 500px;
+    width: 550px;
     padding: 20px;
     border-style: none;
     border-radius: 16px;
 }
 
-form {
+.form {
     display: flex;
-    flex-direction: column;
-    gap: 6px;
+    padding: 12px 12px 0px 12px;
+    justify-content: space-between;
+    gap: 40px;
 }
 
-label {
-    font-size: 18px;
+.formLeft {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+}
+
+.formRight {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+}
+
+label,
+legend {
+    font-size: 16px;
+    margin-bottom: 5px;
+}
+
+fieldset {
+    padding: 0px 10px 0px 10px;
+    margin-bottom: 16px;
 }
 
 input {
     height: 25px;
     border-radius: 6px;
+    margin-bottom: 20px;
 }
 
 #btnAddBook {
-    align-self: center;
+    float: right;
 }
 
 dialog > h2 {
     margin-top: 0px;
-    margin-bottom: 20px;
+    margin-bottom: 5px;
 }
