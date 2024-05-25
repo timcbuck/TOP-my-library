@@ -28,7 +28,7 @@
 
     <dialog class="newBookDialog">
         <h2>Enter details of new book</h2>
-        <form method="dialog">
+        <form method="dialog" id="newBookForm">
             <div class="form">
                 <div class="formLeft">
                     <label for="title">Title: </label>
@@ -41,9 +41,9 @@
                     <input type="text" id="author" name="author">
                     <fieldset>
                         <legend>Status</legend>
-                        <input type="radio" id="read" name="readStatus" value="read">
+                        <input type="radio" id="read" name="readStatus" value="Read">
                         <label for="read">Read</label>
-                        <input type="radio" id="unread" name="readStatus" value="unread">
+                        <input type="radio" id="unread" name="readStatus" value="Unread">
                         <label for="unread">Unread</label>
                     </fieldset>
                     

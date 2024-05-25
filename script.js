@@ -14,16 +14,29 @@ function Book(title, author, pages, readStatus) {
 }
 
 function addBookToLibrary() {
-    // Get id???
-
     // Get user input
     let title = document.getElementById('title').value;
     let author = document.getElementById('author').value;
     let pages = document.getElementById('pages').value;
-    let newBook = new Book(title, author, pages, "Read");
+    let readStatus = getReadStatus();
+
+    // Create new Book with user input
+    let newBook = new Book(title, author, pages, readStatus);
     // Add user input into myLibrary as new object
     myLibrary.push(newBook);
     displayNewBook();
+    clearForm();
+}
+
+function getReadStatus() {
+    var selectedRadio = document.querySelector('input[name="readStatus"]:checked');
+
+    // Check if a radio button is selected
+    if (selectedRadio) {
+        return selectedRadio.value;
+    } else {
+        console.log("No radio button selected");
+    }
 }
 
 function displayNewBook() {
@@ -52,7 +65,8 @@ function displayNewBook() {
 }
 
 function clearForm() {
-
+    let form = document.getElementById("newBookForm");
+    form.reset();
 }
 
 function removeBook(event) {
