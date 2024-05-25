@@ -40,3 +40,18 @@ function displayBook() {
     // Add book to book-container
     document.querySelector('.book-container').appendChild(divBook);
 }
+
+
+const dialog = document.querySelector("dialog");
+const btnNewBook = document.querySelector("#btnNewBook");
+const btnClose = document.querySelector("dialog button");
+
+// Show the dialog button open the dialog modally
+btnNewBook.addEventListener("click", () => {
+    dialog.showModal();
+});
+
+// Close button closes the dialog
+btnClose.addEventListener("click", () => {
+    dialog.close();
+});

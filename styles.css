@@ -15,7 +15,6 @@ h4 {
 }
 
 button {
-    margin-right: 40px;
     height: 50px;
     padding-left: 20px;
     padding-right: 20px;
@@ -25,6 +24,10 @@ button {
     color: white;
     font-size: 16px;
     cursor: pointer;
+}
+
+.header > button {
+    margin-right: 40px;
 }
 
 .header {
@@ -55,4 +58,35 @@ button {
 .book-header {
     display: flex;
     justify-content: space-between;
+}
+
+.newBookDialog {
+    width: 500px;
+    padding: 20px;
+    border-style: none;
+    border-radius: 16px;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+label {
+    font-size: 18px;
+}
+
+input {
+    height: 25px;
+    border-radius: 6px;
+}
+
+#btnAddBook {
+    align-self: center;
+}
+
+dialog > h2 {
+    margin-top: 0px;
+    margin-bottom: 20px;
 }
