@@ -14,13 +14,19 @@ function Book(title, author, pages, readStatus) {
 }
 
 function addBookToLibrary() {
+    // Get id???
+
     // Get user input
-    let newBook = new Book("Musashi", "Eiji Yoshikawa", 984, "Unread");
+    let title = document.getElementById('title').value;
+    let author = document.getElementById('author').value;
+    let pages = document.getElementById('pages').value;
+    let newBook = new Book(title, author, pages, "Read");
     // Add user input into myLibrary as new object
     myLibrary.push(newBook);
+    displayNewBook();
 }
 
-function displayBook() {
+function displayNewBook() {
     // Get details of the last Object in myLibrary (new book)
     let book = myLibrary[myLibrary.length - 1];
     console.log(book);
@@ -34,13 +40,29 @@ function displayBook() {
             <h4>${book.readStatus}</h4>
         </div>
         <p><strong>Author:</strong> ${book.author}</p>
-        <p><strong>Page count:</strong> ${book.pages}</p>
+            <div class="book-bottom">
+                <p><strong>Page count:</strong> ${book.pages}</p>
+                <button class="btnRemove" onclick="removeBook(event);">Remove</button>
+            </div>
     `;
 
     // Add book to book-container
-    document.querySelector('.book-container').appendChild(divBook);
+    let bookContainer = document.querySelector('.book-container')
+    bookContainer.insertBefore(divBook, bookContainer.firstChild);
 }
 
+function clearForm() {
+
+}
+
+function removeBook(event) {
+    let el = event.target;
+    // Get the book div the clicked remove button is associated with
+    let bookDiv = el.parentNode.parentNode;
+    if (bookDiv) {
+        bookDiv.remove();
+    }
+}
 
 const dialog = document.querySelector("dialog");
 const btnNewBook = document.querySelector("#btnNewBook");

@@ -50,9 +50,9 @@ button {
 .book {
     background-color: white;
     border-radius: 12px;
-    width: 550px;
-    padding-left: 15px;
-    padding-right: 15px;
+    width: 500px;
+    padding-left: 30px;
+    padding-right: 30px;
 }
 
 .book-header {
@@ -60,11 +60,27 @@ button {
     justify-content: space-between;
 }
 
+.book-bottom > p {
+    margin-top: 0px;
+}
+
+.book-bottom {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 12px;
+}
+
 .newBookDialog {
     width: 550px;
     padding: 20px;
     border-style: none;
     border-radius: 16px;
+}
+
+.btnRemove {
+    background-color: lightcoral;
+    height: auto;
+    font-size: 14px;
 }
 
 .form {
