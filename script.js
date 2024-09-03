@@ -6,6 +6,7 @@ const myLibrary = [
     readStatus: "Read"
 }];
 
+
 function Book(title, author, pages, readStatus) {
     this.title = title;
     this.author = author;
@@ -80,7 +81,7 @@ function removeBook(event) {
 
 const dialog = document.querySelector("dialog");
 const btnNewBook = document.querySelector("#btnNewBook");
-const btnClose = document.querySelector("dialog button");
+const btnCancel = document.querySelector("#btnCancel");
 
 // Show the dialog button open the dialog modally
 btnNewBook.addEventListener("click", () => {
@@ -88,6 +89,13 @@ btnNewBook.addEventListener("click", () => {
 });
 
 // Close button closes the dialog
-btnClose.addEventListener("click", () => {
+btnCancel.addEventListener("click", () => {
     dialog.close();
+});
+
+// Handle form submission
+document.querySelector('#newBookForm').addEventListener('submit', (event) => {
+    event.preventDefault(); // Prevent default form submission
+    addBookToLibrary();
+    dialog.close(); // Close dialog after form submission
 });
